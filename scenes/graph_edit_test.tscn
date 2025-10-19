@@ -1,0 +1,65 @@
+[gd_scene load_steps=14 format=3 uid="uid://c77gg6p7y81hn"]
+
+[ext_resource type="Script" uid="uid://boqf7sgwhc6cr" path="res://scripts/module-container.gd" id="1_xrubt"]
+[ext_resource type="PackedScene" uid="uid://bq56abr6j4tb0" path="res://scenes/timer.tscn" id="2_s8dww"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvr2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrubt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8dww"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1lcf0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxkfy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qd7sh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vrmk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nq4d3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yudre"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u7c5"]
+
+[sub_resource type="Theme" id="Theme_nejgr"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_hvr2b")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_xrubt")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_s8dww")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_1lcf0")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_rxkfy")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_qd7sh")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_3vrmk")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_nq4d3")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_yudre")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_6u7c5")
+
+[node name="GraphEdit" type="GraphEdit"]
+offset_right = 1156.0
+offset_bottom = 648.0
+theme = SubResource("Theme_nejgr")
+show_grid = false
+snapping_enabled = false
+zoom_min = 1.0
+zoom_max = 1.0
+minimap_enabled = false
+show_menu = false
+script = ExtResource("1_xrubt")
+
+[node name="Timer" parent="." instance=ExtResource("2_s8dww")]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 294.0
+offset_right = 336.0
+offset_bottom = 355.0
+mouse_filter = 1
+position_offset = Vector2(183, 294)
+
+[node name="Tick" type="Timer" parent="."]
+autostart = true
+
+[connection signal="begin_node_move" from="." to="." method="_on_begin_node_move"]
+[connection signal="connection_request" from="." to="." method="_on_connection_request"]
+[connection signal="end_node_move" from="." to="." method="_on_end_node_move"]
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]

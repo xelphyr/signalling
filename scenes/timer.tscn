@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq56abr6j4tb0"]
+
+[ext_resource type="Script" uid="uid://bt5mp345v3utb" path="res://scripts/timer-module.gd" id="1_srplv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srplv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lxq6"]
+
+[sub_resource type="Theme" id="Theme_g5y8c"]
+GraphNode/styles/panel = SubResource("StyleBoxFlat_srplv")
+GraphNode/styles/panel_focus = null
+GraphNode/styles/panel_selected = null
+GraphNode/styles/titlebar = SubResource("StyleBoxFlat_5lxq6")
+
+[node name="Timer" type="GraphNode"]
+offset_right = 153.0
+offset_bottom = 61.0
+theme = SubResource("Theme_g5y8c")
+draggable = false
+selectable = false
+script = ExtResource("1_srplv")
