@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://m2yie1orkp26"]
+
+[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/scenes/overlaid_menu/overlaid_menu_container.tscn" id="1_0y8yt"]
+[ext_resource type="PackedScene" path="res://examples/scenes/credits/scrollable_credits.tscn" id="2_v3yeq"]
+
+[node name="CreditsOverlaidMenu" instance=ExtResource("1_0y8yt")]
+menu_scene = ExtResource("2_v3yeq")
+
+[node name="MenuPanelContainer" parent="." index="1"]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="TitleMargin" parent="MenuPanelContainer/MarginContainer/BoxContainer" index="0"]
+visible = false
+
+[node name="MenuButtons" parent="MenuPanelContainer/MarginContainer/BoxContainer/MenuButtonsMargin" index="0"]
+size_flags_horizontal = 1
+alignment = 0
+vertical = false
